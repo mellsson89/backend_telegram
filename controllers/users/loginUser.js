@@ -1,7 +1,6 @@
 const createError = require('http-errors');
 const UsersService = require('../../services/users');
 const usersService = new UsersService();
-const crypto = require('crypto');
 const loginUser = async (req, res, next) => {
 
     try {
