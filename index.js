@@ -38,13 +38,13 @@ console.log(err.message);
 
 const {PORT} = process.env
 
-const server = app.listen(PORT, () => {
+const index = app.listen(PORT, () => {
   console.log(`Server running. Use our API on port: ${PORT}`)
 })
 
 process.on('unhandledRejection',(error, _) => {
   if(error) {
       console.log(`Error: ${error.message}`)
-      server.close(() => process.exit(1))
+      index.close(() => process.exit(1))
   }
 })
