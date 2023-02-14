@@ -15,7 +15,8 @@ const formatsLogger = app.get('env') === 'development' ? 'dev' : 'short';
 
 
 app.use(logger(formatsLogger));
-app.use(cors());
+// app.use(cors());
+app.use(cors({credentials: true, origin: 'https://backend-telegram-kappa.vercel.app'}));
 app.use(express.json());
 
 
