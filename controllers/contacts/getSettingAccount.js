@@ -5,11 +5,11 @@ const getSetting = async (req, res, next) => {
     try {
         const {id} = req.user;
         const user = await contactService.findContact(id);
+
         if(!user) {
-            res.status(200).json({});
+            res.status(200).json({data: user});
         }
 
-        res.status(200).json({data: user});
 
     } catch (error) {
         next(error)
