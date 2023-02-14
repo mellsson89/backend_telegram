@@ -6,9 +6,10 @@ const getSetting = async (req, res, next) => {
         const {id} = req.user;
         const user = await contactService.findContact(id);
 
-        if(!user) {
+        if(user) {
             res.status(200).json({data: user});
         }
+
         res.status(204).json({});
 
 
