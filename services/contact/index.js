@@ -5,8 +5,8 @@ const crypto = require("crypto");
 class ContactService {
 
     async isContactExist(id) {
-        const user = await Contact.findOne({owner:id});
-        return !!user
+        const data = await Contact.findOne({owner:id});
+        return !!data
     }
 
 
@@ -14,6 +14,11 @@ class ContactService {
 
         const user = await Contact.findOneAndUpdate({owner:userId},{...body},{new:true,runValidators:true});
         return user;
+    }
+
+    async findContact (id) {
+        const data = await Contact.findOne({owner:id});
+        return data
     }
 
 
