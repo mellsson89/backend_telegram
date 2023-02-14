@@ -20,7 +20,7 @@ app.use(express.json());
 
 connectDb();
 
-app.use('/api/contacts', contactsRouter);
+app.use('/api/v1/contacts', contactsRouter);
 app.use('/api/v1/auth', userRouter);
 
 app.use((req, res) => {

@@ -15,9 +15,6 @@ const loginUser = async (req, res, next) => {
             throw new createError(401, 'Data is NOT from Telegram');
         }
 
-        // if(new Date() - Number(authData['auth_date'] )> 86400) {
-        //     throw new createError(401, 'Data is outdated');
-        // }
 
         const user = await usersService.isUserExist(authData.id);
 

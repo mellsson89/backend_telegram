@@ -2,23 +2,22 @@ const {Schema, model} = require('mongoose');
 
 const contactSchema= Schema ({
   
-    name: {
+    app_id: {
       type: String,
-      required: [true, 'Set name for contact'],
+        required: [true, 'App id required'],
     },
-    email: {
+    app_hash: {
       type: String,
+        required: [true, 'App Hash is required'],
     },
-    phone: {
-      type: String,
-    },
-    favorite: {
-      type: Boolean,
-      default: false,
-    },
+        email: {
+            type: String,
+            required: [true, 'Email is required'],
+        },
+
     owner: {
-      type: Schema.Types.ObjectId,
-      ref: 'user',
+        type: String,
+        required: [true, 'Owner is required'],
     }
   
 },
