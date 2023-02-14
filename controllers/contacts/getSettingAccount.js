@@ -9,6 +9,7 @@ const getSetting = async (req, res, next) => {
         if(!user) {
             res.status(200).json({data: user});
         }
+        res.status(204).json({});
 
 
     } catch (error) {
