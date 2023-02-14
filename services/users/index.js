@@ -19,7 +19,7 @@ class UsersService {
         const {id} = user;
         const payload = {id};
         const {JWT_SECRET_KEY} = process.env;
-        const token = jwt.sign(payload, JWT_SECRET_KEY, {expiresIn:'5h'});
+        const token = jwt.sign(payload, JWT_SECRET_KEY, {expiresIn:'12h'});
         return token;
     }
 
